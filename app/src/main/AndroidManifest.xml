@@ -12,6 +12,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SankuriGroup">
         <activity
+            android:name=".view.TaskProgressActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.DashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.HomeScreenActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.SplashScreenActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
