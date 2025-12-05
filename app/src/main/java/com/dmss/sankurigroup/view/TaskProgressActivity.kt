@@ -28,6 +28,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -64,7 +65,8 @@ class TaskProgressActivity : ComponentActivity() {
             }
         ) {
             Scaffold (
-                topBar = {
+                containerColor = colorResource(id = R.color.body_bg),
+                        topBar = {
                     AppHeader(
                         title = "Dashboard",
                         onLeftClick = {
@@ -78,8 +80,9 @@ class TaskProgressActivity : ComponentActivity() {
 
                 Box(modifier = Modifier.padding(paddingValues)
                     ) {
-
-                    DashboardComposes().CircularProgress(0.43f)
+                    val sampleImages = listOf(
+                        0.34f,0.45,0.55,0.66)
+                    TaskProgressCompose().ProgressPagerScreen()
                 }
             }
         }

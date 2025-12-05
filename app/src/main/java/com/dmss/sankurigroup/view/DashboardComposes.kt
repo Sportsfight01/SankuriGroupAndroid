@@ -54,7 +54,7 @@ class DashboardComposes {
         modifier: Modifier = Modifier
     ) {
         val pagerState = rememberPagerState(pageCount = { images.size })
-5
+
         Box(
             modifier = modifier
                 .fillMaxWidth()
@@ -97,56 +97,6 @@ class DashboardComposes {
                             )
                     )
                 }
-            }
-        }
-    }
-    @Composable
-    fun CircularProgress(progress: Float) {
-
-        Column() {
-
-            Text(
-                text = "Progress",
-                fontSize = 18.sp,
-                color = Color.Black, modifier = Modifier.padding(10.dp))
-
-            Box(
-                modifier = Modifier.fillMaxWidth(),
-                contentAlignment = Alignment.Center,
-
-                ) {
-
-                val strokeWidth = 14.dp
-
-                Canvas(modifier = Modifier.size(140.dp)) {
-
-                    // Background circle (black)
-                    drawArc(
-                        color = Color.Black,
-                        startAngle = -90f,
-                        sweepAngle = 360f,
-                        useCenter = false,
-                        style = Stroke(width = strokeWidth.toPx(), cap = StrokeCap.Round)
-                    )
-
-                    // Progress arc (yellow)
-                    drawArc(
-                        color = Color(0xFFFFC107),
-                        startAngle = -90f,
-                        sweepAngle = progress * 360,
-                        useCenter = false,
-                        style = Stroke(width = strokeWidth.toPx(), cap = StrokeCap.Round)
-                    )
-                }
-
-                // Percentage text inside
-                Text(
-                    text = "${(progress * 100).toInt()}%",
-                    fontSize = 22.sp,
-                    fontWeight = FontWeight.Bold,
-                    color = Color.Black,
-//            modifier = Modifier.align(Alignment.Center)
-                )
             }
         }
     }

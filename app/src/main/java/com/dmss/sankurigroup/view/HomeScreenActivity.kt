@@ -7,6 +7,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.animation.scaleOut
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -43,6 +44,17 @@ class HomeScreenActivity : ComponentActivity() {
         setContent {
             HomeScreen()
         }
+    }
+
+    override fun onStop() {
+        super.onStop()
+        println("LifeCycleMethod:: onStop")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        println("LifeCycleMethod:: onDestroy")
+
     }
 
 @Composable
@@ -92,8 +104,9 @@ fun HomeScreen() {
             Image(
                 painter = painterResource(R.drawable.suncity),
                 contentDescription = "",
-                modifier = Modifier.width(150.dp).
-                height(180.dp),
+                modifier = Modifier
+                    .width(150.dp)
+                    .height(180.dp),
                 contentScale = ContentScale.Crop
             )
         }

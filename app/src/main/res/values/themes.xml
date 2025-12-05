@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.SankuriGroup" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="Theme.SankuriGroup" parent="android:Theme.Material.Light.NoActionBar">
+        <!-- Disable Android default splash -->
+        <item name="android:windowDisablePreview">true</item>
+
+        <!-- Prevent blank white/black background flash -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
 </resources>
